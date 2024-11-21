@@ -85,7 +85,10 @@ namespace ProgressPlugin
             string text = "已击杀所有主线Boss";
             foreach (var boss in MainProgress)
             {
-                if (!BossesStatus[boss]) text = boss + "前";
+                if (!BossesStatus[boss]){
+                    text = boss + "前";
+                    break;
+                }
             }
 
             args.Player.SendInfoMessage("目前进度: " + text);
