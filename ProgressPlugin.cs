@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Terraria;
@@ -53,14 +53,11 @@ namespace ProgressPlugin
                 { "机械骷髅王", NPC.downedMechBoss3 },
                 { "猪龙鱼公爵", NPC.downedFishron },
                 { "世纪之花", NPC.downedPlantBoss },
-                { "常绿尖叫怪", NPC.downedChristmasTree },  // 霜月事件-小Boss
-                { "圣诞坦克", NPC.downedChristmasSantank }, // 霜月事件-小Boss
-                { "冰雪女王", NPC.downedChristmasIceQueen }, // 霜月事件-小Boss
-                { "哀木", NPC.downedHalloweenTree }, //南瓜月事件-小Boss
-                { "南瓜王", NPC.downedHalloweenKing },
+                { "霜月", NPC.downedChristmasTree && NPC.downedChristmasSantank && NPC.downedChristmasIceQueen }, 
+                { "南瓜月", NPC.downedHalloweenTree && NPC.downedHalloweenKing }, 
                 { "光之女皇", NPC.downedEmpressOfLight },
                 { "石巨人", NPC.downedGolemBoss },
-                { "火星暴乱", NPC.downedMartians }, //火星暴乱事件-小Boss
+                { "火星暴乱", NPC.downedMartians }, 
                 { "拜月教邪教徒", NPC.downedAncientCultist },
                 { "日耀柱", NPC.downedTowerSolar },
                 { "星旋柱", NPC.downedTowerVortex },
@@ -85,12 +82,12 @@ namespace ProgressPlugin
             string text = "已击杀所有主线Boss";
             foreach (var boss in MainProgress)
             {
-                if (!BossesStatus[boss]){
+                if (!BossesStatus[boss])
+                {
                     text = boss + "前";
                     break;
                 }
             }
-
             args.Player.SendInfoMessage("目前进度: " + text);
 
             args.Player.SendInfoMessage("目前已击杀: " + String.Join(",", killedBossList));
