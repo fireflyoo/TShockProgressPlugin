@@ -11,3 +11,6 @@ TShock游戏后台添加权限的具体指令：
 1. 克隆本仓库：`git clone https://github.com/fireflyoo/TShockProgressPlugin.git`
 2. 进入本仓库目录：`cd TShockProgressPlugin`
 3. 开始编译 `dotnet build`
+
+## 已知Bug
+1. 游戏客户端显示Boss列表不换行，导致文本超出屏幕范围不可读..
